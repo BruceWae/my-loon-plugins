@@ -1,12 +1,12 @@
 #!name=天翼生活去广告
 #!desc=移除天翼生活APP开屏广告、启动动画和首页弹窗广告
-#!author=AI Generated
+#!author=Maverick
 #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/35/c6/9035c6ab-2e08-1e61-a9f2-98c6ae08661d/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
 #!homepage=https://github.com/BruceWae/my-loon-plugins
 #!date=2026-02-06
 
 [Rule]
-# 可选：直接拦截广告图片CDN（如需要可取消注释）
+# 可选：直接拦截广告图CDN（如需要可取消注释）
 # DOMAIN-SUFFIX,zt-activity.go189.cn,REJECT
 
 [Rewrite]

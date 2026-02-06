@@ -7,15 +7,14 @@
 #!system = iOS
 
 [Rewrite]
+# 麦当劳开屏广告接口 - 返回空列表（关键修复！）
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/splash mock-response-body data-type=json body={"success":true,"code":200,"message":"请求成功","data":{"list":[]}}
+
 # 麦当劳弹窗广告（深夜送、促销弹窗等）- 返回空弹窗
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop mock-response-body data-type=json body={"success":true,"code":200,"message":"请求成功","data":{"pop":null}}
 
-# 麦当劳开屏广告
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/splash reject-dict
-
-# 麦当劳广告素材
-^https?:\/\/img\.mcd\.cn\/gallery\/.*ad reject
-^https?:\/\/cdn\.mcd\.cn\/.*splash reject
+# 麦当劳广告视频/图片素材 - 直接拦截
+^https?:\/\/img\.mcd\.cn\/cms\/images\/.*\.(mp4|jpg|png) reject
 
 [MITM]
-hostname = api.mcd.cn, img.mcd.cn, cdn.mcd.cn
+hostname = api.mcd.cn, img.mcd.cn

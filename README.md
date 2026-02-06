@@ -25,6 +25,7 @@
 | 插件 | 描述 | 更新日期 |
 |------|------|----------|
 | [天翼生活去广告](Plugin/TianyiLife_remove_ads.plugin) | 移除开屏广告、启动动画和首页弹窗 | 2026-02-06 |
+| [中国移动江苏去广告](Plugin/JiangsuMobile_remove_ads.plugin) | 移除弹窗广告、Toast提示和各类推广 | 2026-02-07 |
 
 ---
 
@@ -34,17 +35,19 @@
 
 复制以下链接在 Safari 中打开：
 
+**天翼生活：**
 ```
 loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/TianyiLife_remove_ads.plugin
 ```
 
+**中国移动江苏：**
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/JiangsuMobile_remove_ads.plugin
+```
+
 ### 方式二：手动添加
 
-在 Loon 中：配置 → 插件 → 右上角 `+` → 添加以下 URL：
-
-```
-https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/TianyiLife_remove_ads.plugin
-```
+在 Loon 中：配置 → 插件 → 右上角 `+` → 添加插件 URL
 
 ---
 

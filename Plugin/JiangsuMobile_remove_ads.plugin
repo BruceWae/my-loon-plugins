@@ -6,46 +6,39 @@
 #!date=2026-02-07
 
 [Rule]
-# 可选：直接屏蔽广告服务器（如需要可取消注释）
-# DOMAIN,ad.mcloud.139.com,REJECT
+# 屏蔽广告服务器
+DOMAIN,ad.mcloud.139.com,REJECT
 
 [Rewrite]
 # ==================== 弹窗广告 ====================
-# 弹窗广告服务
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/dropsAdverService\/getDropsAdverNew reject-dict
-
-# 发现页广告列表
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverListNew reject-dict
-
-# 首页弹窗排序信息
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/homepagePopup\/getSortInfo reject-dict
-
-# 弹窗详情
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/customerRemoval\/getPopupInfo reject-dict
 
-# ==================== Toast提示广告 ====================
-# Toast提示
+# ==================== Toast提示 ====================
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DH\/toast\/august\/getToast reject-dict
-
-# Toast页面
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DH\/toast\/august\/getPages reject-dict
-
-# Toast规则
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/toast\/getToastRule reject-dict
-
-# Toast延迟时间
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/toast\/getDelayTime reject-dict
 
-# ==================== 云盘/其他模块广告 ====================
-# 移动云盘广告
-^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos reject-dict
+# ==================== 浮窗广告（新增） ====================
+^https?:\/\/wap\.js\.10086\.cn\/hyl\/content\/provider-goods\/advInfo\/getFloatingWindow reject-dict
+^https?:\/\/wap\.js\.10086\.cn\/hyl\/content\/provider-content\/needDx\/getNotice reject-dict
 
-# 金融模块Banner广告
+# ==================== 视频广告（新增） ====================
+^https?:\/\/v\.cmcc-cs\.cn\/cmlive\/api\/advert\/ reject-dict
+^https?:\/\/activity\.cmcc-cs\.cn\/cmlive\/api\/advert\/ reject-dict
+
+# ==================== 云盘广告 ====================
+^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/ reject-dict
+
+# ==================== 金融Banner ====================
 ^https?:\/\/fintech\.12580life\.com\/fintech\/wallet\/v1\/floor\/banner reject-dict
 
 # ==================== 通用广告路径 ====================
-# 匹配包含 Adver/adver 的路径
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/.*[Aa]dver reject-dict
+^https?:\/\/wap\.js\.10086\.cn\/.*advInfo reject-dict
 
 [MitM]
-hostname = client.app.coc.10086.cn, ad.mcloud.139.com, fintech.12580life.com
+hostname = client.app.coc.10086.cn, ad.mcloud.139.com, fintech.12580life.com, wap.js.10086.cn, v.cmcc-cs.cn, activity.cmcc-cs.cn

@@ -1,0 +1,51 @@
+#!name=中国移动江苏去广告
+#!desc=移除江苏移动APP开屏广告、首页弹窗、Toast提示和各类推广
+#!author=AI Generated
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9f/21/b6/9f21b6c3-50ae-08a0-7d36-96a0ad0a39c3/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/144x144bb.png
+#!homepage=https://github.com/BruceWae/my-loon-plugins
+#!date=2026-02-07
+
+[Rule]
+# 可选：直接屏蔽广告服务器（如需要可取消注释）
+# DOMAIN,ad.mcloud.139.com,REJECT
+
+[Rewrite]
+# ==================== 弹窗广告 ====================
+# 弹窗广告服务
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/dropsAdverService\/getDropsAdverNew reject-dict
+
+# 发现页广告列表
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverListNew reject-dict
+
+# 首页弹窗排序信息
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/homepagePopup\/getSortInfo reject-dict
+
+# 弹窗详情
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/customerRemoval\/getPopupInfo reject-dict
+
+# ==================== Toast提示广告 ====================
+# Toast提示
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DH\/toast\/august\/getToast reject-dict
+
+# Toast页面
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DH\/toast\/august\/getPages reject-dict
+
+# Toast规则
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/toast\/getToastRule reject-dict
+
+# Toast延迟时间
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/toast\/getDelayTime reject-dict
+
+# ==================== 云盘/其他模块广告 ====================
+# 移动云盘广告
+^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos reject-dict
+
+# 金融模块Banner广告
+^https?:\/\/fintech\.12580life\.com\/fintech\/wallet\/v1\/floor\/banner reject-dict
+
+# ==================== 通用广告路径 ====================
+# 匹配包含 Adver/adver 的路径
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/.*[Aa]dver reject-dict
+
+[MitM]
+hostname = client.app.coc.10086.cn, ad.mcloud.139.com, fintech.12580life.com

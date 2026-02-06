@@ -1,6 +1,6 @@
 # My Loon Plugins
 
-我的 Loon 去广告插件私有仓库。
+我的 Loon 去广告插件集合。
 
 ## 插件列表
 
@@ -10,15 +10,17 @@
 
 ## 使用方法
 
-由于是私有仓库，需要使用带 Token 的 Raw URL 导入：
+在 Loon 中添加插件 URL：
 
-1. 生成 GitHub Personal Access Token (需要 `repo` 权限)
-2. 使用以下格式的 URL：
-   ```
-   https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/TianyiLife_remove_ads.plugin?token=YOUR_TOKEN
-   ```
+```
+https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/TianyiLife_remove_ads.plugin
+```
 
-或者直接下载插件文件后本地导入 Loon。
+或一键导入：
+
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/TianyiLife_remove_ads.plugin
+```
 
 ## 目录结构
 
@@ -27,3 +29,8 @@
 ├── Script/          # 脚本文件 (.js)
 └── README.md
 ```
+
+## 注意事项
+
+- 需要在 Loon 中正确配置 MitM 证书
+- 如遇问题请提 Issue

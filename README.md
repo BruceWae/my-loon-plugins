@@ -24,6 +24,8 @@
 
 | 插件 | 描述 | 更新日期 |
 |------|------|----------|
+| [KFC 肯德基去广告](Plugin/KFC_AdBlock.plugin) | 屏蔽开屏广告、弹窗广告、首页广告 | 2026-02-07 |
+| [麦当劳去广告](Plugin/McDonalds_AdBlock.plugin) | 屏蔽开屏广告、弹窗广告、首页广告 | 2026-02-07 |
 | [天翼生活去广告](Plugin/TianyiLife_remove_ads.plugin) | 移除开屏广告、启动动画和首页弹窗 | 2026-02-06 |
 | [中国移动江苏去广告](Plugin/JiangsuMobile_remove_ads.plugin) | 移除弹窗广告、Toast提示和各类推广 | 2026-02-07 |
 
@@ -34,6 +36,16 @@
 ### 方式一：一键导入（推荐）
 
 复制以下链接在 Safari 中打开：
+
+**KFC 肯德基：**
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/KFC_AdBlock.plugin
+```
+
+**麦当劳：**
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/McDonalds_AdBlock.plugin
+```
 
 **天翼生活：**
 ```
@@ -72,4 +84,3 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/
 ## 🙏 致谢
 
 感谢所有开源项目的贡献者们。
-

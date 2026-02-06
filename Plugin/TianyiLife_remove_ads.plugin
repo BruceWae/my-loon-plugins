@@ -1,0 +1,42 @@
+#!name=天翼生活去广告
+#!desc=移除天翼生活APP开屏广告、启动动画和首页弹窗广告
+#!author=AI Generated
+#!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/35/c6/9035c6ab-2e08-1e61-a9f2-98c6ae08661d/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
+#!homepage=https://github.com/BruceWae/my-loon-plugins
+#!date=2026-02-06
+
+[Rule]
+# 可选：直接拦截广告图片CDN（如需要可取消注释）
+# DOMAIN-SUFFIX,zt-activity.go189.cn,REJECT
+
+[Rewrite]
+# ==================== 开屏广告 ====================
+# 主开屏广告接口 - 返回空数据使APP跳过广告
+^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/showBootAnimation reject-dict
+
+# 启动动画广告接口
+^https?:\/\/zt-app\.go189\.cn\/zt-app\/flow\/bootAnimation\/showBootAnimation reject-dict
+
+# ==================== 弹窗广告 ====================
+# 活动弹窗
+^https?:\/\/zt-app\.go189\.cn\/zt-activity\/welcome reject-dict
+
+# 配置弹窗
+^https?:\/\/zt-app\.go189\.cn\/zt-config\/welcome reject-dict
+
+# 服务弹窗 (wapjs域名)
+^https?:\/\/wapjs\.189\.cn\/zt-service\/welcome reject-dict
+
+# ==================== 其他可能的广告接口 ====================
+# 通用广告相关路径（预防性拦截）
+^https?:\/\/zt-app\.go189\.cn\/zt-app\/.*[Aa]d[vs]? reject-dict
+^https?:\/\/zt-app\.go189\.cn\/zt-app\/.*[Bb]anner reject-dict
+
+[Script]
+# 如果 reject-dict 导致APP异常，可改用脚本返回正常格式的空数据
+# 取消下方注释启用脚本模式
+
+# http-response ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/showBootAnimation script-path=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Script/tianyi-ad-remove.js,requires-body=true,tag=天翼开屏广告
+
+[MitM]
+hostname = zt-app.go189.cn, wapjs.189.cn, zt-activity.go189.cn

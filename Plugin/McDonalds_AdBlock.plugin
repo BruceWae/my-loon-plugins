@@ -1,0 +1,21 @@
+#!name = 麦当劳去广告
+#!desc = 屏蔽麦当劳 APP 的开屏广告、弹窗广告、首页广告
+#!author = 周顶
+#!homepage = https://github.com/BruceWae/my-loon-plugins
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/79/13/ac/7913ac70-3a3b-3dc5-9029-6927ead6e54c/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
+#!date = 2026-02-07
+#!system = iOS
+
+[Rewrite]
+# 麦当劳弹窗广告（深夜送、促销弹窗等）- 返回空弹窗
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop mock-response-body data-type=json body={"success":true,"code":200,"message":"请求成功","data":{"pop":null}}
+
+# 麦当劳开屏广告
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/splash reject-dict
+
+# 麦当劳广告素材
+^https?:\/\/img\.mcd\.cn\/gallery\/.*ad reject
+^https?:\/\/cdn\.mcd\.cn\/.*splash reject
+
+[MITM]
+hostname = api.mcd.cn, img.mcd.cn, cdn.mcd.cn

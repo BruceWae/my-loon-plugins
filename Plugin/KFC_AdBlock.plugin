@@ -1,0 +1,25 @@
+#!name = KFC 肯德基去广告
+#!desc = 屏蔽 KFC APP 的开屏广告、弹窗广告、首页广告
+#!author = 周顶
+#!homepage = https://github.com/BruceWae/my-loon-plugins
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d2/2f/5c/d22f5c0d-59e1-5c26-eade-b69c84f9f544/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
+#!date = 2026-02-07
+#!system = iOS
+
+[Rule]
+# KFC 动态广告域名 - 直接拒绝
+DOMAIN, dynamicad.kfc.com.cn, REJECT
+
+[Rewrite]
+# KFC 广告路由接口 - 返回空广告数据
+^https?:\/\/abplatform\.yumchina\.com\/abtestplatform\/api\/abtest\/kfc\/adRouter mock-response-body data-type=json body={"data":{"aiAd":{},"commonAd":{},"composeAd":[],"personnalAd":{}},"errCode":0,"errorCode":"0"}
+
+# KFC AI智能弹窗广告
+^https?:\/\/dynamicad\.kfc\.com\.cn\/api\/app5\/homepage\/ai\/popup mock-response-body data-type=json body={"body":{"data":{"list":[]},"abType":"popup"},"error":null,"errorCode":null}
+
+# KFC 开屏/闪屏广告素材
+^https?:\/\/res\.kfc\.com\.cn\/.*splash reject
+^https?:\/\/res\.kfc\.com\.cn\/.*ad\/ reject
+
+[MITM]
+hostname = abplatform.yumchina.com, dynamicad.kfc.com.cn, res.kfc.com.cn

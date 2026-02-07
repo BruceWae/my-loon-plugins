@@ -24,6 +24,7 @@
 
 | 插件 | 描述 | 更新日期 |
 |------|------|----------|
+| [百度网盘去广告 (含游戏中心)](Plugin/BaiduNetDisk_remove_ads_custom.lpx) | 屏蔽开屏、弹窗、游戏中心模块、我的页面推广 | 2026-02-07 |
 | [KFC 肯德基去广告](Plugin/KFC_AdBlock.plugin) | 屏蔽开屏广告、弹窗广告、首页广告 | 2026-02-07 |
 | [麦当劳去广告](Plugin/McDonalds_AdBlock.plugin) | 屏蔽开屏广告、弹窗广告、首页广告 | 2026-02-07 |
 | [天翼生活去广告](Plugin/TianyiLife_remove_ads.plugin) | 移除开屏广告、启动动画和首页弹窗 | 2026-02-06 |
@@ -36,6 +37,11 @@
 ### 方式一：一键导入（推荐）
 
 复制以下链接在 Safari 中打开：
+
+**百度网盘 (强力去广告 + 屏蔽游戏中心)：**
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/BaiduNetDisk_remove_ads_custom.lpx
+```
 
 **KFC 肯德基：**
 ```
@@ -66,7 +72,9 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/
 ## 📁 目录结构
 
 ```
-├── Plugin/          # 插件文件 (.plugin)
+├── Plugin/          # 插件文件 (.plugin / .lpx)
+│   ├── BaiduNetDisk_remove_ads_custom.lpx
+│   ├── baidu_netdisk_clean.js
 ├── Script/          # 脚本文件 (.js)
 └── README.md
 ```

@@ -1,5 +1,5 @@
 #!name = 麦当劳去广告
-#!desc = 屏蔽麦当劳 APP 的开屏广告、弹窗广告。重要：需清除麦当劳APP缓存或重新安装才能生效！
+#!desc = 屏蔽麦当劳 APP 的开屏广告、弹窗广告
 #!author = Maverick
 #!homepage = https://github.com/BruceWae/my-loon-plugins
 #!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/79/13/ac/7913ac70-3a3b-3dc5-9029-6927ead6e54c/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
@@ -13,8 +13,5 @@
 # 麦当劳首页热门活动广告
 ^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity reject-dict
 
-# 麦当劳广告视频/图片素材 - 直接拦截下载
-^https?:\/\/img\.mcd\.cn\/cms\/images\/.*\.(mp4|jpg|png) reject
-
 [MITM]
-hostname = api.mcd.cn, img.mcd.cn
+hostname = api.mcd.cn

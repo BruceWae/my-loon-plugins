@@ -16,12 +16,19 @@
 ^https:\/\/pan\.baidu\.com\/feed\/kingkongdistrict\? response-body-json-jq '.data.data |= map(select(.type != "novel" and .type != "shortplay" and .type != "print" and .type != "job_hunt"))'
 
 # === 新增：屏蔽游戏中心 ===
-# 屏蔽“我的”页面中的游戏中心入口
+# 策略1：拦截“游戏中心”入口 API
 ^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user\?method=gamecenter reject-dict
-# 屏蔽抓包中发现的游戏中心配置 (conf_key=gameCenterRule/From等)
+# 策略2：拦截游戏中心配置
 ^https:\/\/pan\.baidu\.com\/act\/api\/conf\?.*conf_key=gameCenter reject-dict
-# 屏蔽游戏中心具体内容接口
+# 策略3：拦截游戏中心内容数据
 ^https:\/\/pan\.baidu\.com\/act\/v2\/gamecenter\/ reject-dict
+
+# 策略4：强力清除“我的”页面配置中的推广卡片 (Beta)
+# 针对 getconfig 接口进行响应体修改，尝试移除 my_personal_page_settings 中的推广项
+# 注意：这需要脚本支持。由于 JSON 结构复杂，直接正则替换可能不稳定。
+# 这里我们尝试用正则移除 JSON 中的特定 key
+^https:\/\/pan\.baidu\.com\/api\/getconfig\? response-body-json-jq 'del(.data.cfg_category_keys[] | select(.cfg_category_key == "my_personal_page_settings"))'
+
 
 [MitM]
 hostname = pan.baidu.com

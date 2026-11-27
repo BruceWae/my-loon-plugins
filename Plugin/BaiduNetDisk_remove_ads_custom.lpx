@@ -1,8 +1,9 @@
 #!name=百度网盘去广告(含游戏中心屏蔽)
 #!desc=移除开屏广告、首页卡片广告、弹窗，并屏蔽游戏中心模块。
 #!author=可莉🅥 & Maverick
+#!homepage=https://github.com/BruceWae/my-adblock-rules
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/BaiduNetDisk.png
-#!date=2026-02-07
+#!date=2026-11-27
 
 [Rewrite]
 # 原插件规则

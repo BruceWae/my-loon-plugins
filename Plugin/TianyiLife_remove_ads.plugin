@@ -2,7 +2,7 @@
 #!desc=移除天翼生活APP开屏广告、启动动画和首页弹窗广告
 #!author=Maverick
 #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/35/c6/9035c6ab-2e08-1e61-a9f2-98c6ae08661d/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/144x144bb.png
-#!homepage=https://github.com/BruceWae/my-loon-plugins
+#!homepage=https://github.com/BruceWae/my-adblock-rules
 #!date=2026-02-06
 
 [Rule]
@@ -36,7 +36,7 @@
 # 如果 reject-dict 导致APP异常，可改用脚本返回正常格式的空数据
 # 取消下方注释启用脚本模式
 
-# http-response ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/showBootAnimation script-path=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Script/tianyi-ad-remove.js,requires-body=true,tag=天翼开屏广告
+# http-response ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/showBootAnimation script-path=https://raw.githubusercontent.com/BruceWae/my-adblock-rules/main/Script/tianyi-ad-remove.js,requires-body=true,tag=天翼开屏广告
 
 [MitM]
 hostname = zt-app.go189.cn, wapjs.189.cn, zt-activity.go189.cn

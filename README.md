@@ -30,6 +30,7 @@
 | [天翼生活去广告](Plugin/TianyiLife_remove_ads.plugin) | 移除开屏广告、启动动画和首页弹窗 | 2026-02-06 |
 | [中国移动江苏去广告](Plugin/JiangsuMobile_remove_ads.plugin) | 移除弹窗广告、Toast提示和各类推广 | 2026-02-07 |
 | [雅迪智行去广告](Plugin/Yadea_AdBlock.plugin) | 屏蔽弹窗广告与运营位推广（另附[小火箭版](Plugin/Yadea_AdBlock.sgmodule)） | 2026-11-27 |
+| [广告合集精简版](Plugin/AdsCleanup_Slim.sgmodule) | 从「广告拦截&净化合集」抽取的纯声明式规则（小火箭）。已剔除 580 条远程脚本，以及全部银行/支付/微信/支付宝与交易类域名 | 2026-11-27 |
 
 ---
 
@@ -74,6 +75,11 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/
 https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/Yadea_AdBlock.sgmodule
 ```
 
+**广告合集精简版（小火箭版）：** 直接在 Shadowrocket 中打开
+```
+https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/AdsCleanup_Slim.sgmodule
+```
+
 ### 方式二：手动添加
 
 在 Loon 中：配置 → 插件 → 右上角 `+` → 添加插件 URL
@@ -97,6 +103,17 @@ https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/Yadea_AdB
 - 需要在 Loon 中正确配置并信任 MitM 证书
 - 部分插件需要开启 HTTPS 解密才能生效
 - 如遇问题请提 Issue
+
+### AdsCleanup_Slim 的排除范围
+
+为安全起见，本模块**硬性不含**以下域名（写死在生成脚本里，不会回归）：
+
+- **脚本**：全部 580 条 `[Script]` 远程脚本已删除，文件内无任何 `script-path`
+- **银行/支付**：所有手机银行、银联/云闪付、拉卡拉等支付机构、支付宝（含 `ynuf.alipay.com` 风控域）
+- **微信**：`mp.weixin.qq.com`、`security.wechat.com`、`weixin110.qq.com`、财付通
+- **交易类**：淘宝/天猫/京东/拼多多/美团/大众点评/饿了么/闲鱼/携程/同程/滴滴/山姆/盒马
+
+保留的是纯声明式的 `[Rule]` / `[URL Rewrite]` / `[Body Rewrite]` / `[Map Local]` / `[Header Rewrite]`，不会外发任何数据。
 
 ---
 

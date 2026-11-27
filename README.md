@@ -29,6 +29,7 @@
 | [麦当劳去广告](Plugin/McDonalds_AdBlock.plugin) | 屏蔽开屏广告、弹窗广告、首页广告 | 2026-02-07 |
 | [天翼生活去广告](Plugin/TianyiLife_remove_ads.plugin) | 移除开屏广告、启动动画和首页弹窗 | 2026-02-06 |
 | [中国移动江苏去广告](Plugin/JiangsuMobile_remove_ads.plugin) | 移除弹窗广告、Toast提示和各类推广 | 2026-02-07 |
+| [雅迪智行去广告](Plugin/Yadea_AdBlock.plugin) | 屏蔽弹窗广告与运营位推广（另附[小火箭版](Plugin/Yadea_AdBlock.sgmodule)） | 2026-11-27 |
 
 ---
 
@@ -61,6 +62,16 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/
 **中国移动江苏：**
 ```
 loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/JiangsuMobile_remove_ads.plugin
+```
+
+**雅迪智行：**
+```
+loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/Yadea_AdBlock.plugin
+```
+
+**雅迪智行（小火箭版）：** 直接在 Shadowrocket 中打开
+```
+https://raw.githubusercontent.com/BruceWae/my-loon-plugins/main/Plugin/Yadea_AdBlock.sgmodule
 ```
 
 ### 方式二：手动添加

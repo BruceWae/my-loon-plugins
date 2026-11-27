@@ -1,0 +1,19 @@
+#!name = 雅迪智行去广告
+#!desc = 屏蔽雅迪智行 APP 的弹窗广告与运营位推广（纯声明式，无脚本、无外发）
+#!author = Maverick
+#!homepage = https://github.com/BruceWae/my-loon-plugins
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7b/4d/60/7b4d6082-8da3-9ba1-6b1a-efc3f46a2bb7/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/144x144bb.png
+#!date = 2026-11-27
+#!system = iOS
+
+[Rewrite]
+# ==================== 弹窗广告 ====================
+# 弹窗运营位（pop-position）
+^https?:\/\/gw\.yadeaiot\.com\.cn\/api\/app\/system\/pop-window-operation\/ reject-dict
+
+# ==================== 运营位推广 ====================
+# code-26/28/29 素材列表 + v2 图片视频列表
+^https?:\/\/gw\.yadeaiot\.com\.cn\/api\/app\/system\/operation-position\/ reject-dict
+
+[MITM]
+hostname = gw.yadeaiot.com.cn

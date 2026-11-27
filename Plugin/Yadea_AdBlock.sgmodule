@@ -1,0 +1,13 @@
+#!name=雅迪智行去广告
+#!desc=屏蔽雅迪智行 APP 的弹窗广告与运营位推广（纯声明式，无脚本、无外发）
+#!author=Maverick
+
+# 依据本人抓包分析：网关响应体为加密信封，无法改写内容，故按接口整条拦截
+# 仅拦截弹窗与运营位；车控/状态/定位/订单/支付/商城/签到/门店/社区一律不碰
+
+[Map Local]
+^https?:\/\/gw\.yadeaiot\.com\.cn\/api\/app\/system\/pop-window-operation\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/gw\.yadeaiot\.com\.cn\/api\/app\/system\/operation-position\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% gw.yadeaiot.com.cn

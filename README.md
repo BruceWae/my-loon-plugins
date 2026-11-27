@@ -52,6 +52,9 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-adblock-rules
 
 或手动：**配置 → 插件 → 右上角 `+` → 填入 raw 地址**
 
+> `raw.githubusercontent.com` 在国内网络常常打不开，没反应就换镜像（内容完全一致）：
+> `https://cdn.jsdelivr.net/gh/BruceWae/my-adblock-rules@main/Plugin/<文件名>`
+
 ### 小火箭
 
 在 Safari 打开 raw 地址即可弹出「添加模块」，或：**配置 → 模块 → 添加**，填入下面任一地址：
@@ -60,6 +63,9 @@ loon://import?plugin=https://raw.githubusercontent.com/BruceWae/my-adblock-rules
 https://raw.githubusercontent.com/BruceWae/my-adblock-rules/main/Plugin/AdsCleanup_Slim.sgmodule
 https://raw.githubusercontent.com/BruceWae/my-adblock-rules/main/Plugin/Yadea_AdBlock.sgmodule
 ```
+
+> 同样，raw 打不开时换成 jsDelivr 镜像：
+> `https://cdn.jsdelivr.net/gh/BruceWae/my-adblock-rules@main/Plugin/AdsCleanup_Slim.sgmodule`
 
 ---
 
